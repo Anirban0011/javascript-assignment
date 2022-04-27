@@ -1,0 +1,52 @@
+<html>
+  <head>
+    <title>Q3 JS assignment: Number guessing game</title>
+  </head>
+  
+  <center>
+    <h1>Number Guessing Game</h1>
+   
+
+    <input id="text" type="text" placeholder="Guess"> 
+   <br><br>
+    <button id="submit">submit</button><br><br>
+    <p id="P"></p>
+
+    <script>
+        // Math .random generates a number between 0 to 1 , after multiply it with 25 and adding +1 it will give us a range of 1 to 25 inclusive
+ var GuessNumber = Math.floor(Math.random() * 25 + 1);
+var c = 1;
+document.getElementById("submit").onclick=function(){
+
+
+    
+   
+    let guess=document.getElementById('text').value;
+
+        if(guess==GuessNumber){
+            document.getElementById("P").innerHTML="Correct in "+ c + " tries!" ;
+    }
+    
+        
+        else if(guess>GuessNumber){
+            c++;
+            document.getElementById("P").innerHTML="Too High!";
+    }
+    
+      
+        else{
+            c++;
+            document.getElementById("P").innerHTML="Too Low!";
+            }
+        
+    }
+
+    </script>
+
+  </body>
+</center>
+  
+</html>
+
+
+

@@ -1,0 +1,120 @@
+<html>
+  <head>
+    <title>Q1 JS assignment: Image Slider</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .container {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      background: #222;
+      align-items: center;
+      justify-content: center;
+    }
+    .swiper {
+      width: 80%;
+      height: fit-content;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide">
+            <img
+              src="https://cimg1.ibsrv.net/ibimg/hgm/1920x1080-1/100/834/bugatti-chiron-super-sport-vagues-de-lumire-paintwork_100834977.jpg"
+              height="720"
+              width="1280"
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="https://wallpapercave.com/wp/wp2642163.jpg"
+              height="720"
+              width="1280"
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="https://gtspirit.com/wp-content/uploads/2021/08/Apollo-IE.jpg"
+              height="720"
+              width="1280"
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="https://www.supercars.net/blog/wp-content/uploads/2019/11/best-supercar-by-year.png"
+              height="720"
+              width="1280"
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="https://static.motor.es/fotos-noticias/2022/03/alpine-a4810-concept-202285708-1647617472_1.jpg"
+              height="720"
+              width="1280"
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="https://greekreporter.com/wp-content/uploads/2021/11/chaos-ultracar-credit-panopoulos.jpg"
+              height="720"
+              width="1280"
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="https://www.autotest.sk/wp-content/uploads/2021/10/MH2_02.jpg"
+              height="720"
+              width="1280"
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="https://media.evo.co.uk/image/private/s--j9Onh6uG--/v1606484590/evo/2020/11/2020%20Best%20Ferraris-6.jpg"
+              height="720"
+              width="1280"
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="https://www.lambocars.com/wp-content/uploads/2020/12/white_mansory_aventador_1.jpg"
+              height="720"
+              width="1280"
+            />
+          </div>
+        </div>
+
+        <!-- navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </div>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+      const swiper = new Swiper(".swiper", {
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+        loop: true,
+
+        // Navigation arrows
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
+  </body>
+</html>

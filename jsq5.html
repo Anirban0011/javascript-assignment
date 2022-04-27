@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Q5 JS Assignment: Calculator</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        min-height: 100vh;
+
+        align-items: center;
+        justify-content: center;
+      }
+
+      .calculator {
+        flex: 0 0 95%;
+      }
+      .screen {
+        width: 100%;
+        font-size: 7rem;
+        padding: 0.5rem;
+        background: #000;
+        color: #fff;
+        border: 1 px solid #fff;
+      }
+
+      .buttons {
+        display: flex;
+        flex-wrap: wrap;
+        transition: all 0.5s linear;
+      }
+
+      button {
+        flex: 0 0 25%;
+        border: 1px solid black;
+        padding: 0.25rem 0;
+        transition: all 2s ease;
+      }
+      button:hover {
+        background: #fff;
+        color: #000;
+      }
+      .btn-opt {
+        background: #000;
+        color: #fff;
+      }
+      .btn-num {
+        background: #000;
+        color: #fff;
+      }
+      .btn,
+      .btn-equal,
+      .btn-clear {
+        font-size: 4rem;
+      }
+      .btn-equal {
+        background: #000;
+      }
+      .btn-clear {
+        background: #000;
+      }
+      #but {
+        bottom: 0;
+        background: #000;
+        color: #fff;
+        width: 100%;
+        font-size: 4rem;
+        transition: all 2s ease;
+      }
+
+      #but:hover {
+        background: #fff;
+        color: #000;
+      }
+    </style>
+  </head>
+
+  <body>
+    <center>
+      <div><h1 style="font-size: 400%">Calculator</h1></div>
+    </center>
+    <br /><br />
+    <section class="calculator">
+      <form>
+        <input type="text" class="screen" />
+      </form>
+      <div class="buttons">
+        <!-- operations buttons -->
+        <button type="button" class="btn btn-opt" data-num="+">+</button>
+        <button type="button" class="btn btn-opt" data-num="-">-</button>
+        <button type="button" class="btn btn-opt" data-num="*">*</button>
+        <button type="button" class="btn btn-opt" data-num="/">/</button>
+        <!-- num buttons -->
+        <button type="button" class="btn btn-num" data-num=".">.</button>
+        <button type="button" class="btn btn-num" data-num="0">0</button>
+        <button type="button" class="btn btn-num" data-num="1">1</button>
+        <button type="button" class="btn btn-num" data-num="2">2</button>
+        <button type="button" class="btn btn-num" data-num="3">3</button>
+        <button type="button" class="btn btn-num" data-num="4">4</button>
+        <button type="button" class="btn btn-num" data-num="5">5</button>
+        <button type="button" class="btn btn-num" data-num="6">6</button>
+        <button type="button" class="btn btn-num" data-num="7">7</button>
+        <button type="button" class="btn btn-num" data-num="8">8</button>
+        <button type="button" class="btn btn-num" data-num="9">9</button>
+        <button type="button" class="btn-equal btn-num">=</button>
+      </div>
+    </section>
+
+    <div>
+      <button type="button" id="but">Clear</button>
+    </div>
+
+    <script>
+      (function () {
+        let screen = document.querySelector(".screen");
+        let buttons = document.querySelectorAll(".btn");
+        let clear = document.querySelector("#but");
+        let equal = document.querySelector(".btn-equal");
+
+        //retrieve data
+        buttons.forEach(function (button) {
+          button.addEventListener("click", function (e) {
+            let value = e.target.dataset.num;
+            screen.value += value;
+          });
+        });
+
+        equal.addEventListener("click", function (e) {
+          if (screen.value === "") {
+            screen.value = "";
+          } else {
+            let answer = eval(screen.value);
+            screen.value = answer;
+          }
+        });
+
+        clear.addEventListener("click", function (e) {
+          screen.value = "";
+        });
+      })();
+    </script>
+  </body>
+</html>
